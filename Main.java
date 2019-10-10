@@ -2,7 +2,21 @@ class Main{
 
 	static String man="Programme de production de mots de Christoffel\nEntrees possibles:\n\t-\"int int\"\n\t-\"int,int\"\n\t-\"(int,int)\"";
 
+	static int pgcd(int a, int b){
+		int r=a%b;
+		while(r!=0){
+			a=b;
+			b=r;
+			r=a%b;
+		}
+		return b;
+	}
+
 	static String chris(int a, int b){
+		if(a==0)
+			return "Erreur: Division par 0 (a=0)";
+		if(pgcd(a,b)!=1)
+			return a+" et "+b+" ne sont pas premiers entre eux";
 		int x0=0;
 		int x1=1;
 		String w="";
